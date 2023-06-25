@@ -50,7 +50,6 @@ export default async function handler(req, res) {
       console.log(resultSet.recordset)
       await poolConnection.query(`INSERT INTO Encargado (ID_Encargado, ID_Seccion) VALUES (${body.empleado},${body.seccion})`);
 
-      //await poolConnection.query(`INSERT INTO Encargado (ID_Encargado, ID_Seccion ) VALUES ( (SELECT ID_Empleado FROM Empleado WHERE ID_Empleado = ${body.empleado}), (SELECT ID_Seccion FROM Seccion WHERE ID_Seccion = ${body.seccion}))`);
     } catch (err) {
       console.error("Error: "+err.message);
   }

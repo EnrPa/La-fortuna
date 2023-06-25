@@ -1,12 +1,8 @@
 import { useState } from "react"
 import { ModalEmpleados } from "./Modal"
 
-function handleEditar({params}) {
-    alert('editar')
-}
 
-
-export function TablaSecciones( {secciones} ) {
+export function TablaSecciones( {secciones, encargados} ) {
     let [id ,setId] = useState()
     let [modal, setModal] = useState(false)
     console.log(modal)
@@ -26,9 +22,7 @@ export function TablaSecciones( {secciones} ) {
                             <td class="pl-3 pr-3">{seccion.id_seccion}</td>
                             <td class="pl-3 pr-3">{seccion.Nombre}</td>
                             <td>
-                            <button class="bg-yellow-200 hover:bg-yellow-300 rounded pl-4 pr-4" onClick={(e) => {setModal(!modal); setId(e.target.id)}}>
-                                Editar
-                            </button>
+                              <a href={'secciones/' + seccion.id_seccion}>Mostrar</a>
                             </td>
                         </tr>        
                     )

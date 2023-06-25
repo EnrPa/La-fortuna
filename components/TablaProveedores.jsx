@@ -20,9 +20,9 @@ export function TablaProveedores( { proveedores } ) {
                             <td class="pl-3 pr-3">{proveedor.RUT_Comercial}</td>
                             <td class="pl-3 pr-3">{proveedor.Direccion}</td>
                             <td>
-                            <button id={proveedor.ID_Proveedor} class="bg-yellow-200 hover:bg-yellow-300 rounded pl-4 pr-4" onClick={(e) => {setModal(!modal); setId(e.target.id)}}>
-                                Editar
-                            </button>
+                            <a id={proveedor.ID_Proveedor} class="bg-yellow-200 hover:bg-yellow-300 rounded pl-4 pr-4" href={'proveedores/' + proveedor.ID_Proveedor}>
+                                Ver productos
+                            </a>
                             </td>
                         </tr>        
                     )

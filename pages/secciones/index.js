@@ -22,11 +22,13 @@ export async function getStaticProps() {
     var poolConnection = await sql.connect(config);
     console.log("Pidiendo información...");
     var resultSet = await poolConnection.request().query(`SELECT * from Seccion`);
-
+    var encargados = await poolConnection.request().query(`SELECT * from Encargado`);
     console.log(`${resultSet.recordset.length} columnas devueltas.`);
+
     return {
       props: {
-        secciones: resultSet.recordset
+        secciones: resultSet.recordset,
+        encargados: encargados.recordset
       }
     }
 
@@ -41,11 +43,12 @@ export async function getStaticProps() {
 }
 
 
-export default function Secciones({ secciones }) {
-    return (
+export default function Secciones({ secciones, encargados }) {
+  console.log(encargados)  
+  return (
         <ContainerLayout>
             <h1>Secciones</h1>
-            <TablaSecciones secciones={secciones} />
+            <TablaSecciones secciones={secciones} encargados={encargados}/>
         </ContainerLayout>
     )
 }

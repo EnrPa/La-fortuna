@@ -55,7 +55,7 @@ export function NavBar() {
           <ul class="flex space-between">
             {links.map(({label, route}) => (
               <li key={route} class="mr-6 flex items-center justify-center">
-                <Link href={route} onClick={() => {setCargando(true)}} disabled={true} class=" text-yellow-500 hover:text-white transition delay-50 ease-in-out hover:bg-yellow-500 p-2 rounded-lg justify-center">
+                <Link href={route} onClick={() => {setCargando(true)}} class=" text-yellow-500 hover:text-white transition delay-50 ease-in-out hover:bg-yellow-500 p-2 rounded-lg justify-center">
                   {label}
                 </Link>
               </li>

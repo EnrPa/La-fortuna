@@ -49,10 +49,7 @@ export default function Empleados({ empleados }) {
     return (
         <ContainerLayout>
             <h1>Empleados</h1>
-
             <Link href="empleados/registrar">registrar</Link>
-
-
               <TablaEmpleados empleados={empleados}/>
         </ContainerLayout>
 

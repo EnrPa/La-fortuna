@@ -46,6 +46,5 @@ export default function Proveedores({ proveedores }) {
             <h1>Proveedores</h1>
               <TablaProveedores proveedores={proveedores}/>
         </ContainerLayout>
-
         )
 }
